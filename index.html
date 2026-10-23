@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodología Cascada - Desarrollo de Software</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --accent-1: #8e44ad;
+            --accent-2: #3498db;
+            --accent-3: #2980b9;
+            --accent-4: #f39c12;
+            --accent-5: #9b59b6;
+            --accent-6: #2ecc71;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .intro-section, .conclusion-section {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+        }
+
+        .waterfall-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .phase-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 25px;
+            width: 70%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-left: 8px solid;
+            transition: transform 0.3s ease;
+        }
+
+        .phase-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .phase-1 { border-color: var(--accent-1); align-self: flex-start; margin-left: 0%; }
+        .phase-2 { border-color: var(--accent-2); align-self: flex-start; margin-left: 5%; }
+        .phase-3 { border-color: var(--accent-3); align-self: flex-start; margin-left: 10%; }
+        .phase-4 { border-color: var(--accent-4); align-self: flex-start; margin-left: 15%; }
+        .phase-5 { border-color: var(--accent-5); align-self: flex-start; margin-left: 20%; }
+        .phase-6 { border-color: var(--accent-6); align-self: flex-start; margin-left: 25%; }
+
+        .phase-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .phase-1 .phase-title { color: var(--accent-1); }
+        .phase-2 .phase-title { color: var(--accent-2); }
+        .phase-3 .phase-title { color: var(--accent-3); }
+        .phase-4 .phase-title { color: var(--accent-4); }
+        .phase-5 .phase-title { color: var(--accent-5); }
+        .phase-6 .phase-title { color: var(--accent-6); }
+
+        .example-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #34495e;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 0 5px 5px 0;
+            font-size: 0.95rem;
+        }
+
+        .example-box strong {
+            color: #2c3e50;
+        }
+
+        @media (max-width: 768px) {
+            .phase-card {
+                width: 90%;
+                margin-left: 0 !important;
+                align-self: center !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Modelo de Desarrollo en Cascada</h1>
+        <p>Tecnología en Desarrollo de Software - UTP</p>
+    </header>
+
+    <div class="container">
+        
+        <section class="intro-section">
+            <h2>¿Qué es el Modelo en Cascada?</h2>
+            <p>Es un modelo de desarrollo lineal y secuencial que se divide en fases. La regla principal de esta metodología es que cada una de estas fases debe completarse en su totalidad antes de poder avanzar a la siguiente etapa. Es de gran utilidad para aquellos proyectos en los que se puede definir de manera clara y precisa tanto el alcance como los requisitos desde el inicio.</p>
+        </section>
+
+        <section class="waterfall-container">
+            <div class="phase-card phase-1">
+                <h3 class="phase-title">1. Análisis de Requisitos</h3>
+                <p>En esta fase, se establecen los requisitos del software, implicando reuniones para comprender las necesidades y expectativas.</p>
+                <div class="example-box">
+                    <strong>Ejemplo aplicado (Videojuego):</strong> El equipo de desarrollo discute las mecánicas de juego que se desean incluir, acordando que será un título de exploración definiendo la historia principal.
+                </div>
+            </div>
+
+            <div class="phase-card phase-2">
+                <h3 class="phase-title">2. Diseño</h3>
+                <p>En esta fase, se diseña la arquitectura del software, se crean diagramas y se establece la estructura general del sistema.</p>
+                <div class="example-box">
+                    <strong>Ejemplo aplicado (Videojuego):</strong> Se crea un mapa o una imagen detallada de cómo se verá el mundo del juego y cómo van a funcionar sus mecánicas.
+                </div>
+            </div>
+
+            <div class="phase-card phase-3">
+                <h3 class="phase-title">3. Implementación</h3>
+                <p>En esta fase, los programadores escriben y codifican el software utilizando las especificaciones establecidas previamente en el diseño.</p>
+                <div class="example-box">
+                    <strong>Ejemplo aplicado (Videojuego):</strong> Se escribe y se codifica el código del juego, programando los movimientos del personaje y la inteligencia artificial.
+                </div>
+            </div>
+
+            <div class="phase-card phase-4">
+                <h3 class="phase-title">4. Pruebas</h3>
+                <p>En esta fase, se realizan pruebas del software para asegurarse de que funciona correctamente y cumple con los requisitos del cliente.</p>
+                <div class="example-box">
+                    <strong>Ejemplo aplicado (Videojuego):</strong> Se juega el juego de manera intensiva para encontrar y corregir errores o "bugs".
+                </div>
+            </div>
+
+            <div class="phase-card phase-5">
+                <h3 class="phase-title">5. Despliegue</h3>
+                <p>En esta fase, el software se entrega e instala en el entorno de producción para que los usuarios finales puedan utilizarlo.</p>
+                <div class="example-box">
+                    <strong>Ejemplo aplicado (Videojuego):</strong> El videojuego es empaquetado y subido a las tiendas de consolas para que los usuarios puedan descargarlo.
+                </div>
+            </div>
+
+            <div class="phase-card phase-6">
+                <h3 class="phase-title">6. Mantenimiento</h3>
+                <p>En esta fase, se realizan las actualizaciones y correcciones necesarias en el software.</p>
+                <div class="example-box">
+                    <strong>Ejemplo aplicado (Videojuego):</strong> Se realizan actualizaciones y correcciones según sea necesario tras el lanzamiento del título.
+                </div>
+            </div>
+        </section>
+
+        <section class="conclusion-section">
+            <h2>Consideraciones del Modelo</h2>
+            <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h3 style="color: #27ae60;">¿Cuándo usarlo?</h3>
+                    <ul>
+                        <li>Cuando existen requisitos bien definidos y se tiene una idea clara del resultado final.</li>
+                        <li>Cuando los clientes no pueden alterar el alcance del proyecto una vez iniciado.</li>
+                        <li>Cuando existe una documentación detallada y no hay dudas sobre lo que hay que hacer.</li>
+                    </ul>
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <h3 style="color: #c0392b;">Limitaciones</h3>
+                    <ul>
+                        <li>No es adecuado para proyectos en los que los requisitos pueden cambiar con frecuencia.</li>
+                        <li>El modelo no permite la retroalimentación y la iteración durante el proceso de desarrollo.</li>
+                        <li>Una vez completada una fase, no se puede volver a ella debido a su rigidez.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</body>
+</html>
